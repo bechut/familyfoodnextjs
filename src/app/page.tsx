@@ -1,9 +1,53 @@
+"use client";
+
 import Image from "next/image";
+import {
+  Button,
+  Accordion,
+  AccordionItem,
+  DateInput,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownSection,
+  DropdownItem,
+} from "@heroui/react";
+import { CalendarDate } from "@internationalized/date";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <Dropdown>
+          <DropdownTrigger>
+            <Button variant="bordered">Open Menu</Button>
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Static Actions">
+            <DropdownItem key="new">New file</DropdownItem>
+            <DropdownItem key="copy">Copy link</DropdownItem>
+            <DropdownItem key="edit">Edit file</DropdownItem>
+            <DropdownItem key="delete" className="text-danger" color="danger">
+              Delete file
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <DateInput
+          className="max-w-sm"
+          label={"Birth date"}
+          placeholderValue={new CalendarDate(1995, 11, 6)}
+        />
+        <Button color="danger">ABC</Button>
+        <Accordion>
+          <AccordionItem key="1" aria-label="Accordion 1" title="Accordion 1">
+            Lorem ipsum dolor sit amet, c
+          </AccordionItem>
+          <AccordionItem key="2" aria-label="Accordion 2" title="Accordion 2">
+            Lorem ipsum dolor sit amet, c
+          </AccordionItem>
+          <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
+            Lorem ipsum dolor sit amet, c
+          </AccordionItem>
+        </Accordion>
         <Image
           className="dark:invert"
           src="/next.svg"
