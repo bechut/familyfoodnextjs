@@ -8,5 +8,5 @@ export default function PingComponent() {
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  return <p>Ping result: {data}</p>;
+  return <p>Ping result: {data?.length}</p>;
 }
