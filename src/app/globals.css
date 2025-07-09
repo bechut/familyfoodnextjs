@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@plugin "./hero";
-@source "../../node_modules/@heroui/theme/dist";
 
 :root {
   --background: #ffffff;
